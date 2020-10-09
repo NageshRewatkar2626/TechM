@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View data</title>
+</head>
+<body>
+
+<br><br><br>
+<table border="1" width="500" cellspacing="0" align="center">
+	<tr><th colspan="4">
+			View Details
+	</th></tr>
+	<tr><th>Id</th><th>Name</th><th>Update</th><th>Delete</th></tr>
+	{% for x in  data %}
+	<tr><th>{{ forloop.counter }}</th>
+		<th>{{x.router_name}}</th>
+	    
+		<th><a href="{% url 'update' %}?idn={{x.idno}}">Yes</a></th>
+		<th><a href="{% url 'delete' %}?idn={{x.idno}}">Yes</a></th>
+	</tr>
+	{% endfor %}
+</table><th>
+
+
+</body>
+</html>

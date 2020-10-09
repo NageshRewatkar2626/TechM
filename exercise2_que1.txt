@@ -1,0 +1,45 @@
+
+
+
+# Telnet to the server 
+import telnetlib
+HOST = '127.0.0.1:8000'
+tn = telnetlib.Telnet(HOST,'8000')
+tn.write('Telnet to the server')
+print(tn.read_all())
+# --------------------------------------'
+
+# ssh to a server
+from paramiko import SSHClient
+ssh = SSHClient()
+ssh.load_system_host_keys()
+ssh.connect('user@server:path')
+ssh_stdin, ssh_stdout, ssh_stderr = ssh.exec_command('ls')
+print(ssh_stdout) #print the output of ls command
+# ----------------------------------------------------------
+The inode (index node) is a data structure in a Unix-style file system that describes a file-system object
+such as a file or a directory.Each inode stores the attributes and disk block locations of the object's data.
+
+ File-system object attributes may include metadata (times of last change,
+ [2] access, modification), as well as owner and permission data.[3]
+
+ # --------------------------------------------------------------
+ # e) get list of file from path
+find "$(pwd)" -name .htaccess
+readlink -f filename 
+ls -d -1 "$PWD/"**/*
+find /home/Users/Hp/ -name bar -print    
+
+# --------------------------------------------
+
+f) You can use SCP and SFTP to copy files of the following types:
+
+Variable-length
+
+VFC
+
+Fixed
+
+Fortran Carriage Control
+
+Stream-LF	
